@@ -5,8 +5,8 @@ import java.util.ArrayList;
 // At least one of your fields should be an ArrayList or HashMap, and you should use your Student class.
 public class Course {
     private String topic;
-    private Teacher instructor;
-    private ArrayList<Student> enrolledStudents;
+    private exercises.Chapter4.Teacher instructor;
+    private ArrayList<exercises.Chapter4.Student> enrolledStudents;
 //    type Arraylist<content we are listing> name of the array list enrolledStudents
 }
 

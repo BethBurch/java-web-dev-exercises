@@ -29,7 +29,7 @@ public class Student {
     public String studentInfo() {
         return (this.name + " has a GPA of: " + this.gpa);
     }
-    //** this was given from the the textbook EVERYTHING Below is getters and setters
+    //** this was given from the textbook EVERYTHING Below is getters and setters
 
     public String getName() {
         return this.name; }
@@ -53,6 +53,56 @@ public class Student {
     public void setGpa(double gpa) {
         this.gpa = gpa; }
 
+
+
+    public void addGrade(int courseCredits, double grade) {
+        // Update the appropriate fields: numberOfCredits, gpa
+
+        // total score is gpa* number of credits
+        double totalQualityScore = this.gpa * this.numberOfCredits;
+
+        // The quality score for a class is found by multiplying the letter grade score (0.0-4.0) by the number of credits.
+        double newQualityScore = grade * courseCredits;
+       //update the students course credits
+        this.numberOfCredits += courseCredits;
+        //gpa = (total quality score) / (total number of credits)
+        this.gpa = totalQualityScore/this.numberOfCredits;
+    }
+
+    public String getGradeLevel(int numberOfCredits) {
+        if (this.numberOfCredits <= 29){
+            return "freshman";
+        } else if (this.numberOfCredits <= 59){
+            return "sophomore";
+        } else if (this.numberOfCredits <= 89) {
+            return "junior";
+        } else {
+            return "senior";
+        }
+
+    }
+
+    public String toString() {
+        String studentReport = String.format("%s is a %s with %d credits and a GPA of %.2f", this.name, this.getGradeLevel(this.numberOfCredits), this.getNumberOfCredits(), this.getGpa());
+        return studentReport;
+    }
+
+    public boolean equals(Object toBeCompared) {
+        if (toBeCompared == this) {
+            return true;
+        }
+
+        if (toBeCompared == null) {
+            return false;
+        }
+
+        if (toBeCompared.getClass() != getClass()) {
+            return false;
+        }
+
+        Student theStudent = (Student) toBeCompared;
+        return theStudent.getStudentId() == getStudentId();
+    }
 }
 //
 //
