@@ -1,9 +1,10 @@
 package org.launchcode.java.studios.menu;
+
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 public class MenuItem {
-
+    //fields for each menu item in Restaurant
     private String name;
     private String description;
     private double price;
